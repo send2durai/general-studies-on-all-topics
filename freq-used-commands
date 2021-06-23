@@ -1,0 +1,24 @@
+Following commands are frequently used in prod linux/centos OS,
+
+1) Scenario one:
+
+Linux admin should have to copy the log files from log directory to /tmp directory. Example, there is apache application hosted and middleware team wanted to review the catalina logs? How would you do? 
+
+Note: In log directory, we see ocean of log files existing. In that, you need to filter the logs and copy the particular dataes logs to temp directory.
+
+Answer is:
+
+a) Login to app instance that should be a deployed & running on Cloud or On-prem envi.
+b) Once logged naviagte to the directory using cd
+$ cd /var/log/apache/access.log
+$ cd /etc/httpd/logs/access_log
+$ cd /var/log/tomcat6/catalina.out 
+$ ls -ltr | grep catalina*
+$ ls -ltr | grep catalina * | grep 'Jun 2'   --> to specific date filtering
+
+$ tar -czvf /tmp/murugan_log.tar.gz *   --> To archieve and compress all files in a particular directory to the temp dierectory with the name of murugan_log.tar.gz
+
+$ tar -vtf /tmp/murugan_log.tar.gz  ---> list the content (including original file sizes) of the tar file using
+
+Note: whate we are doing here is just, we already gone to /var/log/tomcat6/catalina.out directory and we filter the specific dates logs, compressing the specific dates logs and moving from log directory to temp directory.
+
