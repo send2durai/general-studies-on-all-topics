@@ -22,3 +22,30 @@ $ tar -vtf /tmp/murugan_log.tar.gz  ---> list the content (including original fi
 
 Note: whate we are doing here is just, we already gone to /var/log/tomcat6/catalina.out directory and we filter the specific dates logs, compressing the specific dates logs and moving from log directory to temp directory.
 
+
+2) Scenario two:
+
+You're a new to the linux/cloud team, where you need to manage and administer around 200 Linux boxes. You should login to the each servers for the first time to reset the one-time password shared by admin team. Then you need to setup passwordless authentication in all the machines, how would you do?
+
+Answer is:
+
+Typically all the organizations used to keep a Jump host or bashiton on the infra, which has internet connectivity and management network connectivity, in which we can login to the all the DEV/CERT/PROD linux boxes.
+
+Steps that are required to setup password less authentication,
+
+a) Generate keypair using ssh-keygen
+b) By default the pri/pub-keys are stored in user profile under .ssh/ directory.
+Example: /home/ec2-user/.ssh/id_rsa id_rsa.pub authorized_key
+Note: You should copy the id_rsa.pub file to all the remote nodes, which you wanted to access them via passwordless authentication.
+$ ssh-keygen
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub ec2-user@app-svr1
+
+when you copying the id_rsa.pub file, first time it will ask us to enter the current password. Please enter it. 
+Next time onwards, you need to supply the password, just use below method,
+
+ssh app-srv1 ===> You will be able connect it w/o password.
+
+Note: Private key is always keep in jumphost or your computer. We shouldn't share the private key to anyone. Public key is always keep in public machines.
+
+
+
