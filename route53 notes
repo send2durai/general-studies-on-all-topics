@@ -1,6 +1,9 @@
 Route 53:
 ==========
-Highly available and scalable DNS
+Highly available and scalable DNS.
+
+In AWS, Route53 is global managed DNS (Domain Name System) & we already know DNS is a collection of rules and records which helps clients understand how to reach a server through URLs.
+DNS operates on port 53. Amazon decided to call it route 53 so that’s where the name comes from.
 
 Domain registration
 DNS routing
