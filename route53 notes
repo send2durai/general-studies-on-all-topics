@@ -1,0 +1,84 @@
+Route 53:
+==========
+Highly available and scalable DNS
+
+Domain registration
+DNS routing
+Health Checking
+
+Record sets:
+
+A
+mX - Domain name of an email server
+NS - Identifies the name server of a hosted zone
+PTR - IP to name record
+SOA --> 
+CNAME - alias name of the domain ( name server)
+AAAA --> IPv
+
+Routing policies are,
+Simple routing policy --> Use to route internet traffic to a single resource that performs a given function for your domain.
+Failover routing policy  -->Use when you want to configure active-passive failover
+Geolocation routing policy --> Use when you want to route internet traffic to your resources based on the location of your users.
+Latency routing policy --> Use when you have resources in multiple locations and you want to route traffic to the resource that provides the best latency
+Weighted routing policy -> Use to route traffic to multiple resources in proportions that you specify.
+
+================================================
+
+Hosted Zone?
+
+A hosted zone is a container for records and records contain information about how you want to route
+traffic for a specific domain such as example.com and it's subdomains (india.example.com & china.example.com)
+
+There are two types of hosted zones:
+
+Private hosted zones --contains records that specify how you want to route traffic in an Amazon VPC
+Public hosted zones --contains records that specify how you want to route traffic on the internet
+
+
+Ref: https://kumargaurav1247.medium.com/aws-route53-records-routing-policies-f3657b01ffa2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
