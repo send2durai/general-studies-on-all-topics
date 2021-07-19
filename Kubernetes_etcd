@@ -1,0 +1,60 @@
+What is etcd in kubernetes (k8's)?
+
+ETCD:
+=====
+ETCD is a distributed reliable key-value store that is simple, secure and fast.
+ETCD is a database that store information in a key-value format
+[Key=value]
+The ETCD database store information regarding the cluster, cluster such as nodes, pods, configs,secrets, accounts, roles,bindings
+and others.
+Every Information, you see when you run the 'kubectl' get command is from the ETCD database.
+ETCD starts a service that listens on port 2379 by default, very important.
+
+How to take backup of ETCD and Restore?
+
+### Taking backup using snapshot method:
+
+root@techtalk:~# etcdctl -version
+root@techtalk:~# kubectl -n kube-system get pod
+root@techtalk:~# kubectl -n kube-system describe pod etcd-controlplane
+root@techtalk:~# kubectl get deployments.apps
+root@techtalk:~# kubectl -n kube-system describe pod etcd-controlplane
+## Note: Just refer kubernetes documentation, where check etcd snapshot.
+
+root@techtalk:~# ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+--cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
+snapshot save /opt/snapshot-pre-boot.db
+
+Once, you execute this command, you'll get Snapshot saved at /opt/snapshot-pre-boot.db
+
+If you execute this command, you wont see anything below,
+# kubetctl get deployments.apps
+No resoruces found in default namespace.
+# kubectl get pod
+No resoruces found in default namespace.
+
+### Restore the etcd database backup:
+
+root@techtalk:~# ETCDCTL_API=3 etcdctl --data-dir=/var/lib/etcd-backup snapshot restore /opt/snapshot-pre-boot.db
+
+root@techtalk:~# cd /var/lib/
+root@techtalk:~# ls 
+root@techtalk:~# cd /etc/kubernetes/mainfests/
+root@techtalk:~# ls
+etcd.yaml kube-apiserver.yaml kube-controller-manager.yaml kube-scheduler.yaml
+ root@techtalk:~# vi etcd.yaml --> edit and change the path
+find the path,
+path: /var/lib/etcd-backup
+Esc:wq! [save and quit]
+
+root@techtalk:~# docker ps | grep etcd
+root@techtalk:~# kubectl get deployments.apps  
+NAME  READY  UP-TO-DATE   AVAILABLE AGE
+blue  3/3      3            3        16m
+red   2/2      2            2        16m
+
+ root@techtalk:~# kubectl get pod --> to see the running pods
+
+Ref: https://discuss.kubernetes.io/t/etcd-backup-and-restore-management/11019
+
+
