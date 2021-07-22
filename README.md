@@ -1,1 +1,1 @@
-# Linux-use-casesa nd the commands we uses day to day operations.
+# Linux-use-cases and the commands we uses day to day operations.
