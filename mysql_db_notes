@@ -7,14 +7,14 @@ $ sudo systemctl status mariadb
 ## Downloading the sql file from s3 bucket
 
 $ wget https://cloudcareers-devops.s3.ap-south-1.amazonaws.com/studentapp-ui-proj1.sql -O /tmp/studentapp.sql
-[centos@ip-172-31-36-220 ~]$ cd /tmp/
-[centos@ip-172-31-36-220 tmp]$ pwd
+[centos@ip-10-31-36-220 ~]$ cd /tmp/
+[centos@ip-10-31-36-220 tmp]$ pwd
 /tmp
-[centos@ip-172-31-36-220 tmp]$ ls -l
+[centos@ip-10-31-36-220 tmp]$ ls -l
 -rw-rw-r--  1 centos centos     579 Feb  9  2020 studentapp.sql
 
-[centos@ip-172-31-36-220 tmp]$ mysql -u root <studentapp.sql 
-[centos@ip-172-31-36-220 tmp]$ mysql -u root
+[centos@ip-10-31-36-220 tmp]$ mysql -u root <studentapp.sql      ### Read the content from a file and execute it, this is called "Input redirector".
+[centos@ip-10-31-36-220 tmp]$ mysql -u root
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 7
 Server version: 5.5.68-MariaDB MariaDB Server
@@ -53,7 +53,7 @@ MariaDB [studentapp]> exit;
 
 ### Note: The takeaway from this chapter is, how to install and configure Mariadb. Then how to import already written sql queries to the mariadb server.
 
-[centos@ip-172-31-36-220 tmp]$ cat studentapp.sql 
+[centos@ip-10-31-36-220 tmp]$ cat studentapp.sql 
 create database if not exists studentapp;
 use studentapp;
 CREATE TABLE if not exists students(student_id INT NOT NULL AUTO_INCREMENT,
@@ -67,7 +67,7 @@ CREATE TABLE if not exists students(student_id INT NOT NULL AUTO_INCREMENT,
 grant all privileges on studentapp.* to 'student'@'%' identified by 'student@1';
 grant all privileges on studentapp.* to 'student'@'localhost' identified by 'student@1';
 flush privileges;
-[centos@ip-172-31-36-220 tmp]$ 
+[centos@ip-10-31-36-220 tmp]$ 
 
 
 
