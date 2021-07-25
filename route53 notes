@@ -11,7 +11,7 @@ Health Checking
 
 Record sets:
 
-A
+A - It indicates the IP address of a given domain OR Name to IP
 mX - Domain name of an email server
 NS - Identifies the name server of a hosted zone
 PTR - IP to name record
