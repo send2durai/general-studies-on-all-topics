@@ -15,9 +15,9 @@ A
 mX - Domain name of an email server
 NS - Identifies the name server of a hosted zone
 PTR - IP to name record
-SOA --> 
-CNAME - alias name of the domain ( name server)
-AAAA --> IPv
+SOA - The start of authority (SOA) record. The start of authority (SOA) record identifies the base DNS information about the domain
+CNAME - Alias name of the domain ( name server)
+AAAA - An AAAA record is used to find the IP address of a computer connected to the internet from a name.
 
 Routing policies are,
 Simple routing policy --> Use to route internet traffic to a single resource that performs a given function for your domain.
