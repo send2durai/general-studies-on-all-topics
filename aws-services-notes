@@ -1,0 +1,33 @@
+###
+
+CodeCommit: Service where you can store your code. Similar service is GitHub
+CodeBuild: build and testing service in your CICD pipelines
+CodeDeploy: deploy the packaged code onto EC2 and AWS Lambda
+CodePipeline: Orchestrate the actions of your CICD pipelines (build stages, manual approvals, many deploys, etc)
+CloudFormation: Infra as Code for AWS. Declarative way to manage, create and update resrouces.
+ECS (Elastic Container Service): Docker container management system on AWS. Helps with creating micro-services.
+ECR (Elastic Container Registry): Docker images repository on AWS. Docker Images can be pushed and pulled from there.
+Step Functions: Orchestrate /Co-ordinate Lambda functions and ECS containers into a workflow
+SWF (Simple Workflow Service): Old way of orchestrating a big workflow
+EMR (Elastic map Reduce): Big Data / Hadoop /Spark Clusters on AWS, deployed on EC2 for you.
+Glue: ETL (Extract Transform Load) service on AWS
+OpsWorks: managed Chef and Puppet on AWS
+Elastic Transcoder: managed media (video, music) converter service into various optimized formats
+Organizations: hierarchy and centralized management of multiple AWS accounts.
+
+AWS WorkSpaces: 
+  Managed, Secure Cloud Desktop
+  Great to eliminate management of on-premise VDI (Virtual Desktop Infra)
+  On Demand, pay per by usage
+  Secure, Encrypted, Network Isolation
+  Integrated with Microsoft ADDS
+
+AWS AppSync:
+   Store and sync data across mobile and web apps in real-time
+   Makes use of GraphQL  (mobile technology from FB)
+
+Cost Explorer:
+   Visualize, understand, and manage your AWS costs and usage over time
+   Create custom reports that analyze
+
+AWS SSO (single signon on) : One login managed by AWS to login to various business SAML 2.0-compatible applications.
