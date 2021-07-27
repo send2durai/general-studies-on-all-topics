@@ -1,0 +1,30 @@
+## Here are the dockerfile hints
+
+Docker can build images automatically by reading the instructions from a Dockerfile.
+A Dockerfile must begin with a FROM instruction. 
+The FROM instruction specifies the Parent Image from which you are building.
+
+The image is usually built by executing Docker instructions, which add layers on top of existing image.
+
+The final docker image can be considered as a layered structure where there is a core or a base image and on top of that,
+there are several layered intermediate images.
+
+RUN, CMD and ENTRYPOINT:
+
+RUN commands always executes in a new layer and creates a new image layer.
+Eg: RUN apt-get install mysql
+It is often used for installing software packages and applications.
+
+All '3' commands have 2 forms.
+
+Shell form and executable form.
+
+Shell Form:
+ <instruction><command>
+
+example: RUN apt-get -y update
+
+Executable Form:
+  <instruction>["executable","param1","param2",...]
+
+example: RUN["apt-get","install","apache2"]
