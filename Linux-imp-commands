@@ -101,5 +101,11 @@ ec2-user:x:1000
 john:x:1001:
 mark:x:1002
 
+## Usermod 
+
+# usermod -G john mark
+# id mark
+uid=1002(mark) gid=1002(mark) groups=1002(mark),1001(john)
+
 
 
