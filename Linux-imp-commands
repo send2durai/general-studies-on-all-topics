@@ -45,5 +45,61 @@ Super User	root	          /root	            /bin/bash
 System User	ftp,ssh,apache	/var/ftp, etc	    /sbin/nologin
 Normal User	visitor, ec2-user	/home/username	 /bin/bash
 
+# pwd
+# whoami
+# id root
+
+## User Creation:
+Whenever an user is created in Linux, below things happen by default.
+   1. A home directory is created '/home/username'
+   2. Unique UID & GID are given to user
+   3. An entry in /etc/passwd
+
+# pwd
+# whoami
+# id root
+UID - User ID
+GID - Group ID
+
+User Creation:
+
+The syntax for creating an user in linux is,
+
+# useradd <option> <username>
+
+Options are:
+------------
+
+* -u user id
+* -G secondary group id
+* -g primary group id
+* -d home directory
+* -c comment
+* -s shell
+########## Creating User account in Linux box
+
+# useradd john
+# cd /home
+# ls
+ec2-user john
+# id john
+uid=1001(john) gid=1001(john) groups=1001(john)
+# useradd mark
+# cd /home
+# ls
+ec2-user john mark
+# id mark
+uid=1002(mark) gid=1002(mark) groups=1002(mark)
+# cat /etc/passwd
+
+ec2-user:x:1000:1000:Cloud User:/home/ec2-user:/bin/bash
+john:x:1001:1001::/home/john:/bin/bash
+mark:x:1002:1002::/home/mark:/bin/bash
+
+# cat /etc/group
+ec2-user:x:1000
+john:x:1001:
+mark:x:1002
+
 
 
