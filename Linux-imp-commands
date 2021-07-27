@@ -116,4 +116,8 @@ uid=1002(mark) gid=1002(mark) groups=1002(mark),1001(john)
 find a line with 'PasswordAuthentication no' change it to 'PasswordAuthentication yes'
 
 
+## Note: The '/etc/shadow' file stores contain the password hash information for the user account and optional aging information..
+
+# cat /etc/shadow ---> To see the user account password information in encyrpted format
+
 
