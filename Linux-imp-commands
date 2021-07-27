@@ -1,0 +1,49 @@
+### Linux important commands
+
+## Grep --Global regular expression print
+
+# grep -i Permit /etc/ssh/sshd_config 
+
+here '-i' mean, it doesn't check, whether it will be small or capital of a word you're searching
+
+# ls -l | grep ^d --> it only filter and give you directories of a specific path
+
+# ls -l /etc/ssh/ | grep ^d  
+
+-----------------
+SED - stands for stream editor, which is used to search a word in the file and replace it with the word required
+to be in the output.
+
+Note: It will only modify the output, but there will be no change in the original file
+
+Example,
+
+sed 's/ansible/linux/' file
+sed 's/ansible/linux/g' file -->  'g'- global .It replaces ansible to linux in all the places in a file
+sed 's/ansible/linux/ig' file  --> it wont consider, the ansible is starts from Upper or lower cases
+sed -i 's/ansible/linux/' file1
+sed -i 's/ansible/linux/g' file1
+sed -i 's/ansible/linux/ig' file1
+
+# sed -n '5,10p' file1
+# sed -n '5,10d' file1
+
+# sed 's/#/ /' file1  --> searching only with '#' lines
+
+User Management:
+
+In Linux there are three types of users.
+
+1.Super or root user: User is the most powerful user. He is the administrator user
+
+2. System user: Users created by the softwares or applications
+
+3. Normal user: Normal users are the users created by root user.
+
+Type 	      Example	       Home Directory	    Shell
+Super User	root	          /root	            /bin/bash
+System User	ftp,ssh,apache	/var/ftp, etc	    /sbin/nologin
+Normal User	visitor, ec2-user	/home/username	 /bin/bash
+
+
+
