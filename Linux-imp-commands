@@ -107,5 +107,13 @@ mark:x:1002
 # id mark
 uid=1002(mark) gid=1002(mark) groups=1002(mark),1001(john)
 
+# usermod -G john mark
+# id mark
+uid=1002(mark) gid=1002(mark) groups=1002(mark),1001(john)
+
+# grep -i PasswordAuthentication /etc/ssh/sshd_config 
+
+find a line with 'PasswordAuthentication no' change it to 'PasswordAuthentication yes'
+
 
 
